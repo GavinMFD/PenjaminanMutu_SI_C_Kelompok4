@@ -1,14 +1,20 @@
 <?php
-
 namespace App\Models;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-
-class Mahasiswa extends Model
+class Mahasiswa extends Authenticatable
 {
-    use HasFactory;
+    use Notifiable;
+    protected $table = 'mahasiswa';
+    protected $primaryKey = 'nim';
+    public $incrementing = false;
+    protected $keyType = 'string';
+    protected $fillable = ['nim','nama','email','password','jurusan'];
 
-    protected $table = 'mahasiswa'; // nama tabel di database
-    protected $fillable = ['nim', 'nama', 'jurusan', 'kelas', 'email'];
+    protected $hidden = ['password'];
+
+    public function absensi(){
+        return $this->hasMany(Absensi::class, 'nim_mahasiswa', 'nim');
+    }
 }
