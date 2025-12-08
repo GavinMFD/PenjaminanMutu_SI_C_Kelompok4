@@ -46,7 +46,7 @@
     </div>
 
     <div class="flex justify-center mb-10">
-        <a href="#"
+        <a href="{{ route('mahasiswa.scan') }}"
            class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl shadow-lg transition">
             <i class="fas fa-qrcode text-lg"></i>
             <span class="font-medium">Scan QR Code</span>

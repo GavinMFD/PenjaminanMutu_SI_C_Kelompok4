@@ -53,6 +53,10 @@
                 <i class="fas fa-home mr-3"></i>
                 <span>Dashboard Mahasiswa</span>
             </a>
+            <a href="{{ route('mahasiswa.scan') }}" class="flex items-center px-3 py-2 rounded-md hover:bg-blue-200">
+                <i class="fas fa-qrcode mr-3"></i>
+                <span>Scan QR Code</span>
+            </a>
             <a href="#" class="flex items-center px-3 py-2 rounded-md hover:bg-blue-200">
                 <i class="fas fa-book mr-3"></i>
                 <span>Jadwal Mata Kuliah</span>

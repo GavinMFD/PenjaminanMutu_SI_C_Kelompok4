@@ -20,8 +20,10 @@
             <div>
                 <label class="text-sm font-semibold">Mata Kuliah</label>
                 <select class="w-full p-2 rounded border">
-                    <option>Contoh Mata Kuliah 1</option>
-                    <option>Contoh Mata Kuliah 2</option>
+                    <option>Pemrograman Web</option>
+                    <option>Penjaminan Mutu Sistem Informasi</option>
+                    <option>Kecerdasan Bisnis</option>
+                    <option>Basis Data</option>
                 </select>
             </div>
 
@@ -95,7 +97,7 @@
                 <tr class="border-b">
                     <td class="p-3">Siti Rahma</td>
                     <td class="p-3">22031002</td>
-                    <td class="p-3">Basis Data</td>
+                    <td class="p-3">Kecerdasan Bisnis</td>
                     <td class="p-3">2025-01-12</td>
                     <td class="p-3"><span class="bg-red-200 text-red-700 px-3 py-1 rounded-full text-sm">Alpha</span></td>
                     <td class="p-3"><a class="text-blue-600 hover:underline">Detail</a></td>
