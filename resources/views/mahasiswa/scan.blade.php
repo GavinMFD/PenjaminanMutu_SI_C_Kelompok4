@@ -9,15 +9,12 @@
             Tekan tombol di bawah untuk memulai proses scan QR Code.
         </p>
 
-        <!-- Tombol Mulai Scan -->
         <button id="btn-start-scan" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 mb-4">
             Mulai Scan
         </button>
 
-        <!-- Area Scanner (disembunyikan dulu) -->
         <div id="reader" class="w-full rounded-xl overflow-hidden shadow-md" style="display:none;"></div>
 
-        <!-- Status / Info -->
         <div id="scan-status" class="text-center mt-4 text-gray-500 text-sm"></div>
     </div>
 </div>
@@ -31,14 +28,11 @@
     const reader = document.getElementById("reader");
     const statusText = document.getElementById("scan-status");
 
-    // Ketika tombol ditekan
     document.getElementById("btn-start-scan").addEventListener("click", function() {
 
-        // Tampilkan area kamera
         reader.style.display = "block";
         statusText.innerHTML = "Menyalakan kamera...";
 
-        // Inisialisasi scanner
         scanner = new Html5Qrcode("reader");
 
         scanner.start(
@@ -51,17 +45,14 @@
 
                 statusText.innerHTML = "QR berhasil dibaca! Mengirim data...";
 
-                // Stop kamera
+
                 scanner.stop().then(() => {
-                    // Hapus tampilan kamera
                     reader.innerHTML = "";
                 });
 
-                // Redirect untuk diproses controller
                 window.location.href = "{{ route('mahasiswa.scan') }}?code=" + encodeURIComponent(decodedText);
             },
             function(err) {
-                // Error kecil diabaikan agar tidak spam
             }
         ).then(() => {
             statusText.innerHTML = "Silakan arahkan kamera ke QR Code.";

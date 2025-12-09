@@ -18,7 +18,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
-    Route::get('/absensi', [AbsensiController::class, 'index'])->name('admin.absensi.index');
+    Route::get('/absensi', [AdminAbsensiController::class, 'index'])->name('admin.absensi.index');
 });
 
 Route::middleware(['auth', 'role:dosen'])->prefix('dosen')->group(function () {

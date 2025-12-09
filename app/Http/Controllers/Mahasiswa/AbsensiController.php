@@ -24,17 +24,6 @@ class AbsensiController extends Controller
 
         $qr = $request->code;
 
-        /**
-         * QR Code Ideal:
-         * Berisi id_jadwal atau token unik absensi.
-         * Contoh isi QR:
-         * "ABSEN-2025-12345"
-         * atau JSON terenkripsi.
-         *
-         * DI BAWAH INI contoh sederhana:
-         */
-
-        // Jika QR berisi ID Jadwal
         $jadwal = Jadwal::find($qr);
 
         if (!$jadwal) {
@@ -42,7 +31,6 @@ class AbsensiController extends Controller
                 ->with('error', 'QR Code tidak dikenali.');
         }
 
-        // Cek apakah mahasiswa sudah absen
         $cek = Absensi::where('mahasiswa_id', Auth::id())
                 ->where('jadwal_id', $jadwal->id)
                 ->whereDate('created_at', now()->toDateString())
@@ -53,7 +41,6 @@ class AbsensiController extends Controller
                 ->with('warning', 'Anda sudah melakukan absensi sebelumnya.');
         }
 
-        // Simpan absensi baru
         Absensi::create([
             'mahasiswa_id' => Auth::id(),
             'jadwal_id'    => $jadwal->id,

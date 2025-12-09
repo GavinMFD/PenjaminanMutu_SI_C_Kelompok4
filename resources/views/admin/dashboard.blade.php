@@ -5,7 +5,6 @@
 
 @section('content')
 
-{{-- === Statistik Cards === --}}
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
     <div class="bg-white rounded-xl shadow p-5 flex items-center space-x-4">
         <div class="bg-blue-100 p-3 rounded-full text-blue-600">
@@ -48,7 +47,6 @@
     </div>
 </div>
 
-{{-- === Grafik Kehadiran Mingguan === --}}
 <div class="bg-white rounded-xl shadow p-6 mb-6">
     <h2 class="text-lg font-semibold text-gray-800 mb-4">Grafik Kehadiran Mingguan</h2>
     <canvas id="attendanceChart" height="100"></canvas>
