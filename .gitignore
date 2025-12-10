@@ -1,0 +1,18 @@
+# Laravel
+/vendor
+/node_modules
+/public/storage
+/storage
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+SRS_Project_SistemAbsensiMahasiswa_Kelompok4.pdf
+
+bootstrap/
